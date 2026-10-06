@@ -1,0 +1,102 @@
+@import 'tailwindcss';
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source '../**/*.blade.php';
+@source '../**/*.js';
+
+@theme {
+    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+        'Segoe UI Symbol', 'Noto Color Emoji';
+}
+.accounts-section {
+    margin-top: 40px;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.section-header h2 {
+    margin: 0;
+}
+
+.section-header p {
+    margin: 5px 0 0;
+}
+
+.accounts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.account-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    min-height: 150px;
+    padding: 20px;
+
+    text-decoration: none;
+    color: inherit;
+
+    border: 1px solid #ddd;
+    border-radius: 12px;
+
+    transition: transform 0.15s ease;
+}
+
+.account-card:hover {
+    transform: translateY(-3px);
+}
+
+.account-top {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.account-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 45px;
+    height: 45px;
+
+    border-radius: 10px;
+    background: #f2f2f2;
+}
+
+.account-top h3 {
+    margin: 0;
+}
+
+.account-top p {
+    margin: 4px 0 0;
+    font-size: 14px;
+}
+
+.account-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+
+    margin-top: 30px;
+}
+
+.account-bottom strong {
+    font-size: 20px;
+}
+
+.no-accounts {
+    padding: 30px;
+    text-align: center;
+    border: 1px dashed #ccc;
+    border-radius: 12px;
+}
