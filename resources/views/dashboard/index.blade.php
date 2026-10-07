@@ -5,30 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    @vite('resources/css/app.css')
 </head>
 <body>
     @auth
-        @include('header')
+        @include('components.header')
 
         <!---- Main Content ---->
         <main>
-            <section>
-                <!-- Accounts -->
-                <div>
-                    <div>
-                        <h2>My Accounts</h2>
-                    </div>
-                </div>
-                <hr>
-                <!-- Add Transaction -->
-                <div style="display: flex; align-items:center; gap: 10px; border: 1px solid black;">
-                    <p>Add Transactions</p>
-                    <a href="">
-                        <img 
-                            style="width: 30px; height: 30px;" 
-                            src="{{ asset('assets/addButton.png') }}" alt="Add">
-                    </a>
-                </div>
+            <section style="display: flex; flex-direction: column; justify-content: center;">
+                @include('components.page-title', ['title' => 'Dash is Board'])
+                @include('components.add-button', ['label' => 'Add Transaction', 'page' => 'categories'])
             </section>
         </main>
     @else

@@ -5,10 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Create Account</title>
+    @vite('resources/css/app.css')
 </head>
 
 <body>
-    @include('header')
+    @include('components.header')
     <h1>Create Account</h1>
 
     @if ($errors->any())
@@ -93,7 +94,7 @@
             Create Account
         </button>
     </form>
-
+    
     <br>
 
     <a href="{{ route('accounts.index') }}">

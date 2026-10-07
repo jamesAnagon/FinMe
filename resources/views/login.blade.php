@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     
     <title>ProjectManager</title>
+    @vite('resources/css/app.css')
 </head>
 
 

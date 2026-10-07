@@ -5,22 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>My Accounts</title>
+    @vite('resources/css/app.css')
 </head>
 
 <body>
-    @include('header')
+    @include('components.header')
 
+    <main>
     @if (session('success'))
         <div>
             {{ session('success') }}
         </div>
     @endif
 
-    <a href="{{ route('accounts.create') }}">
-        + Create Account
-    </a>
-
-    <hr>
+    @include('components.page-title', ['title' => 'Acc is Count'])
+    @include('components.add-button', ['label' => 'Create Account', 'page' => 'accounts'])
 
     @forelse ($accounts as $account)
 
@@ -52,6 +51,7 @@
 
         <hr>
 
+        
     @empty
 
         <p>You don't have any accounts yet.</p>
@@ -61,6 +61,7 @@
         </a>
 
     @endforelse
-
+    @include('components.add-button', ['label' => 'Add Transaction', 'page' => 'categories'])
+    </main>
 </body>
 </html>

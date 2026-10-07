@@ -5,11 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>{{ $account->name }} - FinMe</title>
+    @vite('resources/css/app.css')
 </head>
 
 <body>
 
-    @include('header')
+    @include('components.header')
 
     <main>
 
