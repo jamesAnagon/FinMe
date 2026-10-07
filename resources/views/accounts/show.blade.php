@@ -9,11 +9,7 @@
 
 <body>
 
-    <header>
-        <a href="{{ route('dashboard') }}">
-            ← Back to Dashboard
-        </a>
-    </header>
+    @include('header')
 
     <main>
 

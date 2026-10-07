@@ -8,7 +8,7 @@
 </head>
 
 <body>
-
+    @include('header')
     <h1>Create Account</h1>
 
     @if ($errors->any())

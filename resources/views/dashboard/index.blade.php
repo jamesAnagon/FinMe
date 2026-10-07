@@ -8,77 +8,11 @@
 </head>
 <body>
     @auth
-        <!---- Nav Bar ---->
-        <header style="display: flex; align-items: center; width: 100%; gap: 100px; border: 1px solid orange;">
-            
-            <!-- First Half -->
-            <div style="display: flex; align-items: center; gap: 100px;" > 
-                <!-- Sidebar -->
-                <div>
-                    <a href="">
-                    <img 
-                        style="width: 30px; height: 30px;" 
-                        src="{{ asset('assets/hamburger.png') }}" alt="sidebar">
-                    </a>
-                </div>
-
-                <div>
-                    <h1>Welcome to FinMe {{ auth() -> user() -> name }} </h1>
-                </div>
-            </div>
-
-            <!-- Second Half -->
-            <div style="display: flex; align-items: center; gap: 80px;" > 
-                
-                <a href="">
-                    <img 
-                        style="width: 30px; height: 30px;" 
-                        src="{{ asset('assets/folder.png') }}" alt="records">
-                    </a>
-                </a>
-
-                <a href="">
-                    <img 
-                        style="width: 30px; height: 30px;" 
-                        src="{{ asset('assets/analysis.png') }}" alt="analysis">
-                    </a>
-                </a>
-
-                <a href="">
-                    <img 
-                        style="width: 30px; height: 30px;" 
-                        src="{{ asset('assets/budgets.png') }}" alt="budgets">
-                    </a>
-                </a>
-
-                <a href="{{ route('accounts.index') }}">
-                    <img 
-                        style="width: 30px; height: 30px;" 
-                        src="{{ asset('assets/accounts.png') }}" alt="accounts">
-                    </a>
-                </a>
-                
-                <a href="">
-                    <img 
-                        style="width: 30px; height: 30px;" 
-                        src="{{ asset('assets/categories.png') }}" alt="categories">
-                    </a>
-                </a>
-
-                <form action="{{ route('logout') }}" method="GET">
-                    <button type="submit">
-                        LOG OUT
-                    </button>
-                </form>
-
-            </div>
-            
-        </header>
+        @include('header')
 
         <!---- Main Content ---->
         <main>
             <section>
-
                 <!-- Accounts -->
                 <div>
                     <div>
@@ -87,7 +21,7 @@
                 </div>
                 <hr>
                 <!-- Add Transaction -->
-                <div style="display: flex; align-items:center;">
+                <div style="display: flex; align-items:center; gap: 10px; border: 1px solid black;">
                     <p>Add Transactions</p>
                     <a href="">
                         <img 

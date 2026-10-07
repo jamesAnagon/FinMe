@@ -8,22 +8,7 @@
 </head>
 
 <body>
-        <header class="topbar">
-            <h1>Welcome to FinMe {{ auth() -> user() -> name }} </h1>
-            <div class="logo">
-                <div class="logo-box"></div>
-                Fin<span>Me</span>
-            </div>
-            <form action="{{ route('logout') }}" method="GET">
-                <button
-                    type="submit"
-                    class="logout-btn">
-                    LOG OUT
-                </button>
-            </form>
-            <a href="{{ route('dashboard') }}">Dashboard</a>
-        </header>
-        <hr>
+    @include('header')
 
     @if (session('success'))
         <div>
