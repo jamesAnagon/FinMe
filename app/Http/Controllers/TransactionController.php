@@ -2,30 +2,31 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Account;
+use App\Models\Category;
 use App\Models\Transaction;
 use Illuminate\Http\Request;
 
 class TransactionController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function index()
-    {
-        //
+    {   
+        $transactions = auth()->user()->transactions;
+        return view('transactions.index', [
+            'transactions' => $transactions
+        ]);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
     public function create()
-    {
-        //
+    {   
+        $accounts = auth()->user()->accounts;
+        $categories = auth()->user()->categories;
+        return view('transactions.create', [
+            'accounts' => $accounts,
+            'categories' => $categories
+        ]);
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(Request $request)
     {
         //

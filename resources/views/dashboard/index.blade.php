@@ -15,7 +15,7 @@
         <main>
             <section style="display: flex; flex-direction: column; justify-content: center;">
                 @include('components.page-title', ['title' => 'Dash is Board'])
-                @include('components.add-button', ['label' => 'Add Transaction', 'page' => 'categories'])
+                @include('components.add-button', ['label' => 'Add Transaction', 'page' => 'transactions'])
             </section>
         </main>
     @else

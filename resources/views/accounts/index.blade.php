@@ -61,7 +61,7 @@
         </a>
 
     @endforelse
-    @include('components.add-button', ['label' => 'Add Transaction', 'page' => 'categories'])
+    @include('components.add-button', ['label' => 'Add Transaction', 'page' => 'transactions'])
     </main>
 </body>
 </html>

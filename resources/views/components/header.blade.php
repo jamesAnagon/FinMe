@@ -21,7 +21,7 @@
             <!-- Second Half -->
             <div style="display: flex; align-items: center; gap: 80px; width: 100%; justify-content: center;" > 
                 
-                <a href="">
+                <a href="{{ route('transactions.index') }}">
                     <img 
                         style="width: 30px; height: 30px;" 
                         src="{{ asset('assets/folder.png') }}" alt="records">
