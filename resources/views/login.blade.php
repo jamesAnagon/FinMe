@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     
-    <title>ProjectManager</title>
+    <title>FinMe - Finance Tracker</title>
     @vite('resources/css/app.css')
 </head>
 
@@ -29,9 +29,9 @@
 
         <main class="auth-container">
 
-            <div class="welcome-label"> PROJECTMANAGER </div>
+            <div class="welcome-label"> FinMe - FINANCE TRACKER </div>
             <h1> Welcome. </h1>
-            <p class="auth-subtitle"> Sign up or log in to manage your projects. </p>
+            <p class="auth-subtitle"> Sign up or log in to start tracking your finance </p>
 
 
             <!-- REGISTER -->

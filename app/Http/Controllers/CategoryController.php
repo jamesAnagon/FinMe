@@ -28,9 +28,10 @@ class CategoryController extends Controller
     }
 
     public function store(CategoryRequest $request)
-    {
+    {   
+        $validated = $request->validated();
         $validated['user_id'] = auth()->id();// gets the relationship of user to category so laravel knows where to store it and how are they connected
-        Category::create($request->validated()); 
+        Category::create($validated); 
         return redirect()->route('categories.index');
     }
 

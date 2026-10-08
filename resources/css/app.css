@@ -14,6 +14,9 @@ input[type="radio"] {
   position: absolute;
   pointer-events: none; /* Keeps it clickable via the label */
 }
+*, *::before, *::after {
+  box-sizing: border-box; 
+}
 
 label {
   cursor: pointer;
@@ -23,4 +26,98 @@ label {
 input[type="radio"]:checked + label {
   color: blue;
 }
+
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+.form-section {
+  width: 100% !important;
+  max-width: 100vw !important;
+  overflow-x: hidden !important;
+  box-sizing: border-box;   /* Keeps internal layout padding from spilling outwards */
+}
+
+.vert-center {
+  display: flex; 
+  flex-direction: row;      /* Row layout for wide screens */
+  flex-wrap: wrap;          /* 🌟 Fix: Allows items to break down on mobile */
+  gap: 20px; 
+  justify-content: center; 
+  align-items: center;
+}
+
+.hori-center {
+  display: flex; 
+  flex-direction: column; 
+  justify-content: center; 
+  width: 100%;             /* 🌟 Fix: Keeps the column bound to screen constraints */
+}
+
+.gap-5{
+  gap: clamp(5px, 2vw, 15px);
+}
+
+/* Part 1 */
+.nav-buttons {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 20px;
+}
+.btn-cancel, .btn-save {
+  background: none;
+  border: none;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+.btn-save {
+  color: #10B981;
+}
+.btn-cancel {
+  color: #DC2626;
+}
+
+
+/* Part 2 */
+.transaction-type-selector{
+  display: flex; 
+  flex-direction: row;      /* Row layout for wide screens */
+  flex-wrap: wrap;          /* 🌟 Fix: Allows items to break down on mobile */
+  gap: 20px; 
+  justify-content: center; 
+  align-items: center;
+  padding: 5px 10px;
+}
+
+.expense-label, .income-label, .transfer-label {
+  font-size: 18px;
+  font-size: 18px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+
+/* Part 3 */
+.select-container{
+  display: flex; 
+  flex-direction: column;
+  width: 100%;
+  padding: 10px 15px;
+}
+
+.label{
+  text-align: center;
+}
+
+/* Part 4 */
+.container {
+  display: flex; 
+  flex-direction: column;
+  width: 100%;
+  padding: 12px 15px;
+}
+
 
