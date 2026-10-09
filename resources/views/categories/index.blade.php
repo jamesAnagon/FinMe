@@ -14,7 +14,7 @@
 
     <main>
     @if (session('success'))
-        <div>
+        <div class="status-message">
             {{ session('success') }}
         </div>
     @endif

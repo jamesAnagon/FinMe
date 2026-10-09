@@ -11,7 +11,7 @@
 <body>
     <main>
         <section class="form-section">
-            <h3 style="text-align: center; border: 1px solid black;">Add New Category</h3>
+            <h3 class="create-title category-create-title">Add New Category</h3>
             <form 
             action="{{ route('categories.store') }}" 
             method="POST"

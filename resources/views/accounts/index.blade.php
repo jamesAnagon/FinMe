@@ -14,12 +14,12 @@
 
     <main>
     @if (session('success'))
-        <div>
+        <div class="status-message">
             {{ session('success') }}
         </div>
     @endif
 
-    @include('components.page-title', ['title' => 'Acc is Count'])
+    @include('components.page-title', ['title' => 'Accounts'])
     @include('components.add-button', ['label' => 'Create Account', 'page' => 'accounts'])
 
     @forelse ($accounts as $account)
@@ -55,9 +55,9 @@
         
     @empty
 
-        <p>You don't have any accounts yet.</p>
+        <p class="empty-state-message">You don't have any accounts yet.</p>
 
-        <a href="{{ route('accounts.create') }}">
+        <a class="empty-state-link" href="{{ route('accounts.create') }}">
             Create your first account
         </a>
 

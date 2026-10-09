@@ -53,9 +53,9 @@
                             <img src="{{ asset('assets/categories.png') }}" alt="categories">
                         </a>
                     </li>
-                    <li class="nav-item">
+                    <li class='nav-form'>
                         <form action="{{ route('logout') }}" method="GET">
-                            <button type="submit">
+                            <button class="nav-form-button" type="submit">
                                 LOG OUT
                             </button>
                         </form>

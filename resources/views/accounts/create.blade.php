@@ -13,7 +13,7 @@
     <h2 class="create-title">Create Account</h2>
 
     @if ($errors->any())
-        <div>
+        <div class="form-errors">
             <strong>Please fix the following errors:</strong>
             <ul>
                 @foreach ($errors->all() as $error)
