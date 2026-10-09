@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     @vite('resources/css/app.css')
+    @vite('resources/js/app.js')
 </head>
 <body>
     @auth
@@ -13,9 +14,8 @@
 
         <!---- Main Content ---->
         <main>
-            <section style="display: flex; flex-direction: column; justify-content: center;">
-                @include('components.page-title', ['title' => 'Dash is Board'])
-                @include('components.add-button', ['label' => 'Add Transaction', 'page' => 'transactions'])
+            <section>
+                @include('components.page-title', ['title' => 'Dashboard'])
             </section>
         </main>
     @else

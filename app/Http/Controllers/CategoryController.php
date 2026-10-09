@@ -14,8 +14,12 @@ class CategoryController extends Controller
     public function index()
     {   
         $category = auth()->user()->categories;
+        $incomeCategory = $category->where('type', 'income');
+        $expenseCategory = $category->where('type', 'expense');
         return view('categories.index', [
-            'categories' => $category
+            'categories' => $category,
+            'incomes' => $incomeCategory,
+            'expenses' => $expenseCategory
         ]);
     }
 

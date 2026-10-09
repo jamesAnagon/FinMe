@@ -5,7 +5,7 @@ namespace App\Http\Requests;
 use Illuminate\Contracts\Validation\ValidationRule;
 use Illuminate\Foundation\Http\FormRequest;
 
-class CategoryRequest extends FormRequest
+class TransactionRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -23,8 +23,12 @@ class CategoryRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'name' => ['required', 'unique:categories,name', 'min:1', 'max:20'],
-            'type' => ['required']
+            'account_id' => ['required'],
+            'category_id' => ['required'],
+            'type' => ['required'],
+            'amount' => ['required', 'numeric'],
+            'description' => ['nullable', 'string'],
+            'transaction_date' => ['nullable', 'date']
         ];
     }
 }

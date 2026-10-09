@@ -6,16 +6,15 @@
 
     <title>Create Account</title>
     @vite('resources/css/app.css')
+    @vite('resources/js/app.js')
 </head>
 
 <body>
-    @include('components.header')
-    <h1>Create Account</h1>
+    <h2 class="create-title">Create Account</h2>
 
     @if ($errors->any())
         <div>
             <strong>Please fix the following errors:</strong>
-
             <ul>
                 @foreach ($errors->all() as $error)
                     <li>{{ $error }}</li>
@@ -23,83 +22,50 @@
             </ul>
         </div>
     @endif
+    <main>
+        <section class="form-section">
+            <form action="{{ route('accounts.store') }}" method="POST" id="account-form">
+                @csrf
 
-    <form action="{{ route('accounts.store') }}" method="POST">
-        @csrf
+                <div class="select-container gap-5">
+                    <label for="type">Account Type</label>
+                    <select name="type" id="type" required>
+                        <option value="">Select account type</option>
 
-        <div>
-            <label for="name">Account Name</label>
+                        <option value="spending" {{ old('type') == 'spending' ? 'selected' : '' }}>
+                            Spending
+                        </option>
 
-            <input
-                type="text"
-                id="name"
-                name="name"
-                value="{{ old('name') }}"
-                placeholder="e.g. BDO Savings"
-                required
-            >
-        </div>
+                        <option value="savings" {{ old('type') == 'savings' ? 'selected' : '' }}>
+                            Savings
+                        </option>
+                    </select>
+                </div>
 
-        <br>
+                <div class="container gap-5">
+                    <label for="name">Account Name</label>
+                    <input type="text" id="name" name="name" value="{{ old('name') }}"placeholder="e.g. BDO Savings" required>
+                </div>
 
-        <div>
-            <label for="type">Account Type</label>
+                <div class="container gap-5">
+                    <label for="initial_balance">Initial Balance</label>
 
-            <select name="type" id="type" required>
-                <option value="">Select account type</option>
+                    <input type="number" id="initial_balance" name="initial_balance" value="{{ old('initial_balance', 0) }}" min="0" step="0.01" required>
+                </div>
 
-                <option value="spending" {{ old('type') == 'spending' ? 'selected' : '' }}>
-                    Spending
-                </option>
+                <div class="container gap-5">
+                    <label for="icon">Icon</label>
 
-                <option value="savings" {{ old('type') == 'savings' ? 'selected' : '' }}>
-                    Savings
-                </option>
-            </select>
-        </div>
-
-        <br>
-
-        <div>
-            <label for="initial_balance">Initial Balance</label>
-
-            <input
-                type="number"
-                id="initial_balance"
-                name="initial_balance"
-                value="{{ old('initial_balance', 0) }}"
-                min="0"
-                step="0.01"
-                required
-            >
-        </div>
-
-        <br>
-
-        <div>
-            <label for="icon">Icon</label>
-
-            <input
-                type="text"
-                id="icon"
-                name="icon"
-                value="{{ old('icon') }}"
-                placeholder="e.g. wallet"
-            >
-        </div>
-
-        <br>
-
-        <button type="submit">
-            Create Account
+                    <input type="text" id="icon" name="icon" value="{{ old('icon') }}"placeholder="e.g. wallet">
+                </div>
+            </form>
+        </section>
+    </main>
+    <div class="nav-buttons">
+        <a href="{{ route('accounts.index') }}" class="btn-cancel">Cancel</a>
+        <button type="submit" form="account-form" class="btn-save">
+            Save 
         </button>
-    </form>
-    
-    <br>
-
-    <a href="{{ route('accounts.index') }}">
-        Back to Accounts
-    </a>
-
+    </div>
 </body>
 </html>

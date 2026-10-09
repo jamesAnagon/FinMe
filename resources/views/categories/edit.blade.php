@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     @vite('resources/css/app.css')
+    @vite('resources/css/app.js')
 </head>
 <body>
     @include('components.header')

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\TransactionRequest;
 use App\Models\Account;
 use App\Models\Category;
 use App\Models\Transaction;
@@ -27,9 +28,12 @@ class TransactionController extends Controller
         ]);
     }
 
-    public function store(Request $request)
+    public function store(TransactionRequest $request)
     {
-        //
+        $validated = $request -> validated();
+        $validated['user_id'] = auth() -> id();
+        Transaction::create($validated);
+        return redirect()->route('transactions.index');
     }
 
     /**

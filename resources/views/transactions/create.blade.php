@@ -6,10 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Create Transactions</title>
     @vite('resources/css/app.css')
+    @vite('resources/js/app.js')
 </head>
 <body>
     <main>
-        <h2 style="text-align: center; border: 1px solid black;">Create Transaction</h2>
+        <h2 class="create-title">Create Transaction</h2>
         <section class="form-section">
             <!-- Save and cancel -->
             <div class="nav-buttons">
@@ -33,17 +34,17 @@
 
             <!-- Actual Form -->
             <form 
-            action="{{route('transactions.create')}}" 
+            action="{{route('transactions.store')}}" 
             method="POST" 
-            class="hori-center gap-20"
-            id="transacton-form"
+            class="form gap-5"
+            id="transaction-form"
             >
                 <div style="display: flex;">
                     <div class="select-container">
                         <label class="label">Account</label>
                         <select name="account_id">
                             @foreach ($accounts as $account)
-                                <option value="{{ $account }}">{{ $account->name }}</option>
+                                <option value="{{ $account->id }}">{{ $account->name }}</option>
                             @endforeach
                         </select>
                     </div>
@@ -51,21 +52,21 @@
                         <label class="label">Category</label>
                         <select name="category_id">
                             @foreach ($categories as $category)
-                                <option value="{{ $category }}">{{ $category->name }}</option>
+                                <option value="{{ $category->id }}">{{ $category->name }}</option>
                             @endforeach
                         </select>
                     </div>
                 </div>
                 <div class="container">
-                    <textarea name="description" id="description" class="description" cols="10" rows="6" placeholder="Add Notes"></textarea>
+                    <textarea name="description" id="description" class="description" cols="10" rows="5" placeholder="Add Notes"></textarea>
                 </div>
                 
                 <div class="container gap-5">
-                    <label for="amount">Amount</label>
+                    <label for="amount">Amount:</label>
                     <input type="number" name="amount" id="amount">
                 </div>
                 <div class="container gap-5">
-                    <label for="transaction_date">Transaction Date</label>
+                    <label for="transaction_date">Transaction Date:</label>
                     <input type="datetime-local" name="transaction_date" id="transaction_date" >
                 </div>
             </form>
